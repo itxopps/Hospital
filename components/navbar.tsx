@@ -1,4 +1,3 @@
-// components/navbar.tsx
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -35,7 +34,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full transition-all duration-300">
-      {/* Top Banner (Desktop Only) */}
+      {/* Top Contact Bar (Desktop Only) */}
       <div className="bg-slate-900 text-slate-200 text-xs py-2 px-4 border-b border-slate-800 hidden lg:block">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-6 rtl:space-x-reverse">
@@ -65,19 +64,19 @@ export function Navbar() {
       </div>
 
       {/* Main Sticky Navbar */}
-      <nav className={`w-full transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-md py-2.5" : "bg-white border-b border-slate-100 py-3.5"}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+      <nav className={`w-full transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-md py-2.5" : "bg-white border-b border-slate-100 py-3"}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2 w-full">
           
-          {/* Brand Logo */}
-          <Link href="/" className="flex items-center space-x-2.5 rtl:space-x-reverse group shrink-0">
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-primary-800 to-secondary-500 flex items-center justify-center text-white shadow-md">
-              <PlusCircle className="w-6 h-6" />
+          {/* Brand Logo - Flex constrained so it never pushes controls off screen */}
+          <Link href="/" className="flex items-center space-x-2 rtl:space-x-reverse group min-w-0 shrink">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-tr from-primary-800 to-secondary-500 flex items-center justify-center text-white shadow-md shrink-0">
+              <PlusCircle className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <div className="flex flex-col">
-              <span className="font-heading font-extrabold text-lg xl:text-xl text-slate-900 tracking-tight leading-none whitespace-nowrap">
+            <div className="flex flex-col min-w-0">
+              <span className="font-heading font-extrabold text-sm sm:text-lg xl:text-xl text-slate-900 tracking-tight leading-none truncate">
                 FARIS AL-JAZEERA
               </span>
-              <span className="text-[10px] xl:text-xs text-primary-700 font-medium tracking-wide whitespace-nowrap">
+              <span className="text-[9px] sm:text-[10px] xl:text-xs text-primary-700 font-medium tracking-wide truncate">
                 Medical Complex • مجمع فارِس الطبي
               </span>
             </div>
@@ -98,7 +97,7 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Desktop Right Action Area */}
+          {/* Desktop Action Area */}
           <div className="hidden lg:flex items-center space-x-2 xl:space-x-3 rtl:space-x-reverse shrink-0">
             <LanguageSwitcher />
             <Link href="/appointment">
@@ -109,12 +108,12 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Tablet & Mobile Right Action Area */}
-          <div className="flex lg:hidden items-center space-x-2 rtl:space-x-reverse shrink-0">
+          {/* Mobile Action Area: Fixed Spacing */}
+          <div className="flex lg:hidden items-center space-x-1.5 rtl:space-x-reverse shrink-0">
             <LanguageSwitcher />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none"
+              className="p-1.5 rounded-xl text-slate-700 hover:bg-slate-100 active:bg-slate-200 focus:outline-none transition-colors"
               aria-label="Toggle Navigation"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -122,7 +121,7 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Mobile & Tablet Navigation Drawer */}
+        {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
           <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-2 shadow-lg animate-fadeIn">
             {navLinks.map((link) => (
