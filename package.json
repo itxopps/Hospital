@@ -13,9 +13,9 @@
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.19",
     "lucide-react": "^0.424.0",
-    "next": "15.0.0",
-    "react": "^19.0.0-rc-6032338f-20240917",
-    "react-dom": "^19.0.0-rc-6032338f-20240917",
+    "next": "^15.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-hook-form": "^7.52.1",
     "tailwind-merge": "^2.4.0",
     "zod": "^3.23.8"
