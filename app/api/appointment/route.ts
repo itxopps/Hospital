@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     // Send email to Reception
     const data = await resend.emails.send({
       from: "Faris Hospital Booking <onboarding@resend.dev>", // Replace with your verified domain in production
-      to: ["info@farisaljazeera.com.sa"], // Reception Email Address
+      to: ["oppstech1117@gmail.com"], // Reception Email Address
       subject: `New Appointment Request: ${fullName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; padding: 20px; border: 1px solid #e2e8f0; border-radius: 12px; color: #0f172a;">
