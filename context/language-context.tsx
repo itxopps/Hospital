@@ -23,14 +23,12 @@ const translations: Record<Language, Record<string, string>> = {
     doctors: "Doctors",
     facilities: "Facilities",
     insurance: "Insurance",
-    gallery: "Gallery",
-    blog: "Blog",
     contact: "Contact",
     bookAppointment: "Book Appointment",
     emergencyCall: "24/7 Emergency",
     reception: "Reception",
 
-    // Hero Section
+    // Hero & Home Section
     topBadge: "Leading Healthcare in Dhahrat Laban, Riyadh",
     heroTitle1: "Your Health & Well-being,",
     heroTitle2: "Our Lifelong Commitment.",
@@ -39,14 +37,10 @@ const translations: Record<Language, Record<string, string>> = {
     urgentTrauma: "24/7 Emergency",
     licensedConsultants: "Licensed Consultants",
     urgentCare247: "24/7 Urgent Care",
-
-    // Homepage Section Titles
     ourDepartmentsTitle: "Our Specialized Clinical Departments",
     ourServicesTitle: "Comprehensive Healthcare Services",
     ourServicesSubtitle: "From preventive diagnostics to complex oral and cosmetic procedures.",
     ourDoctorsTitle: "Meet Our Consultants & Physicians",
-    
-    // Cards & Buttons
     exploreDepartment: "Explore Department",
     requestTreatment: "Request Treatment",
     bookConsultation: "Book Consultation",
@@ -57,6 +51,39 @@ const translations: Record<Language, Record<string, string>> = {
     urgentBannerDesc: "Our 24/7 Emergency Triage Unit is fully staffed with critical care physicians and advanced equipment.",
     callER: "Call Emergency",
     getDirections: "Get ER Directions",
+
+    // About Page
+    aboutTitle: "About Faris Al-Jazeera",
+    aboutSubtitle: "Delivering compassionate, multi-specialty medical care to families in Dhahrat Laban, Riyadh for over 18 years.",
+    ourMission: "Our Mission",
+    missionDesc: "To provide accessible, high-quality, and evidence-based clinical care using modern medical technologies while prioritizing patient safety and dignity.",
+    ourVision: "Our Vision",
+    visionDesc: "To be Riyadh's most trusted community medical complex, recognized for clinical excellence, rapid emergency response, and patient-centered service.",
+
+    // Doctors Page
+    doctorsPageTitle: "Our Expert Medical Team",
+    doctorsPageSubtitle: "Highly qualified consultants and specialists dedicated to your family's health.",
+
+    // Services Page
+    servicesPageTitle: "Our Medical Services",
+    servicesPageSubtitle: "Advanced diagnostic screenings, emergency intervention, and outpatient treatments.",
+
+    // Departments Page
+    departmentsPageTitle: "Clinical Departments",
+    departmentsPageSubtitle: "State-of-the-art medical departments managed by certified healthcare professionals.",
+
+    // Contact Page
+    contactPageTitle: "Contact Us & Location",
+    contactPageSubtitle: "We are available 24/7 to assist you. Visit our complex in Dhahrat Laban or call us anytime.",
+    workingHoursLabel: "Working Hours",
+    addressLabel: "Address",
+    phoneLabel: "Phone Number",
+    emailLabel: "Email Address",
+
+    // Footer
+    footerTagline: "Riyadh's trusted multi-specialty healthcare provider in Dhahrat Laban. Open 24 Hours / 7 Days a Week.",
+    quickLinks: "Quick Links",
+    allRightsReserved: "All rights reserved.",
   },
   ar: {
     // Navigation
@@ -67,14 +94,12 @@ const translations: Record<Language, Record<string, string>> = {
     doctors: "الأطباء",
     facilities: "المرافق",
     insurance: "التأمين",
-    gallery: "معرض الصور",
-    blog: "المدونة",
     contact: "اتصل بنا",
     bookAppointment: "حجز موعد",
     emergencyCall: "الطوارئ 24/7",
     reception: "الاستقبال",
 
-    // Hero Section
+    // Hero & Home Section
     topBadge: "الرعاية الطبية الرائدة في ظهرة لبن، الرياض",
     heroTitle1: "صحتك وعافيتك..",
     heroTitle2: "التزامنا الدائم مدى الحياة.",
@@ -83,14 +108,10 @@ const translations: Record<Language, Record<string, string>> = {
     urgentTrauma: "طوارئ 24/7",
     licensedConsultants: "استشاريون معتمدون",
     urgentCare247: "رعاية عاجلة 24/7",
-
-    // Homepage Section Titles
     ourDepartmentsTitle: "أقسامنا الطبية المتخصصة",
     ourServicesTitle: "خدماتنا الطبية الشاملة",
     ourServicesSubtitle: "من الفحوصات التشخيصية الوقائية إلى العلاجات التجميلية وطب الأسنان المتقدم.",
     ourDoctorsTitle: "نخبة أطبائنا واستشاريينا",
-
-    // Cards & Buttons
     exploreDepartment: "استكشف القسم",
     requestTreatment: "طلب علاج",
     bookConsultation: "حجز استشارة",
@@ -101,6 +122,39 @@ const translations: Record<Language, Record<string, string>> = {
     urgentBannerDesc: "قسم فرز الطوارئ لدينا يعمل على مدار الساعة مع طاقم من أطباء العناية الحرجة وأحدث الأجهزة الطبية.",
     callER: "الاتصال بالطوارئ",
     getDirections: "اتجاهات قسم الطوارئ",
+
+    // About Page
+    aboutTitle: "عن مجمع فارس الجزيرة الطبي",
+    aboutSubtitle: "نقدم رعاية طبية متعددة التخصصات بأعلى معايير الجودة لعائلات منطقة ظهرة لبن والرياض لأكثر من 18 عاماً.",
+    ourMission: "رسالتنا",
+    missionDesc: "تقديم رعاية طبية شاملة، عالية الجودة، ومتاحة للجميع باستخدام أحدث التقنيات الطبية مع الإبقاء على سلامة وراحة المريض في مقدمة أولوياتنا.",
+    ourVision: "رؤيتنا",
+    visionDesc: "أن نكون المجمع الطبي الأول والمستوفي لكافة الاحتياجات الصحية في الرياض والمعروف بالتميز السريري والاستجابة السريعة للطوارئ.",
+
+    // Doctors Page
+    doctorsPageTitle: "طاقمنا الطبي المتخصص",
+    doctorsPageSubtitle: "نخبة من الاستشاريين والأطباء المعتمدين المكرسين لرعاية صحتك وصحة عائلتك.",
+
+    // Services Page
+    servicesPageTitle: "خدماتنا الطبية",
+    servicesPageSubtitle: "فحوصات تشخيصية متقدمة، تدخلات طوارئ عاجلة، وعلاجات 외لعيادات الخارجية.",
+
+    // Departments Page
+    departmentsPageTitle: "الأقسام العيادية",
+    departmentsPageSubtitle: "أقسام طبية مجهزة بأحدث الأجهزة والمعدات وتحت إشراف كوادر صحية مؤهلة.",
+
+    // Contact Page
+    contactPageTitle: "تواصل معنا والموقع",
+    contactPageSubtitle: "نحن في خدمتكم على مدار الساعة. تفضل بزيارة مجمعنا في ظهرة لبن أو اتصل بنا في أي وقت.",
+    workingHoursLabel: "أوقات العمل",
+    addressLabel: "العنوان",
+    phoneLabel: "رقم الهاتف",
+    emailLabel: "البريد الإلكتروني",
+
+    // Footer
+    footerTagline: "وجهتكم الطبية الموثوقة متعددة التخصصات في ظهرة لبن، الرياض. مفتوح 24 ساعة / 7 أيام في الأسبوع.",
+    quickLinks: "روابط سريعة",
+    allRightsReserved: "جميع الحقوق محفوظة.",
   },
 };
 
