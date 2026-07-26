@@ -17,7 +17,7 @@ export function DepartmentCard({ department }: DepartmentCardProps) {
   const { language, t } = useLanguage();
   const isAr = language === "ar";
 
-  const displayName = isAr ? department.arabicName : department.name;
+  const displayName = isAr && department.arabicName ? department.arabicName : department.name;
   const displayDesc = isAr && department.arabicShortDescription ? department.arabicShortDescription : department.shortDescription;
   const displayHours = isAr && department.arabicOperatingHours ? department.arabicOperatingHours : department.operatingHours;
 
