@@ -18,7 +18,7 @@ export function DoctorCard({ doctor }: DoctorCardProps) {
   const { language, t } = useLanguage();
   const isAr = language === "ar";
 
-  const displayName = isAr ? doctor.arabicName : doctor.name;
+  const displayName = isAr && doctor.arabicName ? doctor.arabicName : doctor.name;
   const displayTitle = isAr && doctor.arabicTitle ? doctor.arabicTitle : doctor.title;
   const displayDept = isAr && doctor.arabicDepartmentName ? doctor.arabicDepartmentName : doctor.departmentName;
   const displayBio = isAr && doctor.arabicBio ? doctor.arabicBio : doctor.bio;
@@ -43,7 +43,7 @@ export function DoctorCard({ doctor }: DoctorCardProps) {
         <CardContent className="p-6 space-y-3">
           <span className="text-xs font-semibold text-secondary uppercase">{displayDept}</span>
           <h3 className="text-xl font-bold text-slate-900">{displayName}</h3>
-          <p className="text-xs text-primary-800 font-medium">{displayTitle}</p>
+          <p className="text-xs text-primary-800 font-semibold">{displayTitle}</p>
           <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">{displayBio}</p>
         </CardContent>
       </div>
