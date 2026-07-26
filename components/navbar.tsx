@@ -1,3 +1,4 @@
+// components/navbar.tsx
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -29,8 +30,6 @@ export function Navbar() {
     { name: t("doctors"), href: "/doctors" },
     { name: t("facilities"), href: "/facilities" },
     { name: t("insurance"), href: "/insurance" },
-    { name: t("gallery"), href: "/gallery" },
-    { name: t("blog"), href: "/blog" },
     { name: t("contact"), href: "/contact" },
   ];
 
@@ -67,30 +66,30 @@ export function Navbar() {
 
       {/* Main Sticky Navbar */}
       <nav className={`w-full transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-md py-2.5" : "bg-white border-b border-slate-100 py-3.5"}`}>
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
           
           {/* Brand Logo */}
           <Link href="/" className="flex items-center space-x-2.5 rtl:space-x-reverse group shrink-0">
-            <div className="w-9 h-9 xl:w-10 xl:h-10 rounded-2xl bg-gradient-to-tr from-primary-800 to-secondary-500 flex items-center justify-center text-white shadow-md">
-              <PlusCircle className="w-5 h-5 xl:w-6 xl:h-6" />
+            <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-primary-800 to-secondary-500 flex items-center justify-center text-white shadow-md">
+              <PlusCircle className="w-6 h-6" />
             </div>
             <div className="flex flex-col">
-              <span className="font-heading font-extrabold text-base xl:text-lg 2xl:text-xl text-slate-900 tracking-tight leading-none whitespace-nowrap">
+              <span className="font-heading font-extrabold text-lg xl:text-xl text-slate-900 tracking-tight leading-none whitespace-nowrap">
                 FARIS AL-JAZEERA
               </span>
-              <span className="text-[9px] xl:text-[10px] 2xl:text-xs text-primary-700 font-medium tracking-wide whitespace-nowrap">
+              <span className="text-[10px] xl:text-xs text-primary-700 font-medium tracking-wide whitespace-nowrap">
                 Medical Complex • مجمع فارِس الطبي
               </span>
             </div>
           </Link>
 
-          {/* Desktop Navigation Links (Visible on XL screens 1280px+) */}
-          <div className="hidden xl:flex items-center space-x-1 rtl:space-x-reverse 2xl:space-x-2">
+          {/* Desktop Navigation Links */}
+          <div className="hidden lg:flex items-center space-x-1 rtl:space-x-reverse xl:space-x-3">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-2 2xl:px-3 py-1.5 rounded-lg text-xs 2xl:text-sm transition-all duration-200 font-medium whitespace-nowrap ${
+                className={`px-2.5 xl:px-3 py-2 rounded-lg text-xs xl:text-sm transition-all duration-200 font-medium whitespace-nowrap ${
                   pathname === link.href ? "bg-primary-50 text-primary-700 font-semibold" : "text-slate-600 hover:bg-slate-50 hover:text-primary-700"
                 }`}
               >
@@ -100,18 +99,18 @@ export function Navbar() {
           </div>
 
           {/* Desktop Right Action Area */}
-          <div className="hidden xl:flex items-center space-x-2 2xl:space-x-3 rtl:space-x-reverse shrink-0">
+          <div className="hidden lg:flex items-center space-x-2 xl:space-x-3 rtl:space-x-reverse shrink-0">
             <LanguageSwitcher />
             <Link href="/appointment">
-              <Button size="sm" className="gap-1.5 shadow-sm whitespace-nowrap text-xs xl:text-sm px-3 xl:px-4 py-2">
+              <Button size="md" className="gap-2 shadow-sm whitespace-nowrap text-xs xl:text-sm px-3 xl:px-5">
                 <Calendar className="w-4 h-4" />
                 <span>{t("bookAppointment")}</span>
               </Button>
             </Link>
           </div>
 
-          {/* Tablet & Mobile Right Action Area (Visible below 1280px) */}
-          <div className="flex xl:hidden items-center space-x-2 rtl:space-x-reverse shrink-0">
+          {/* Tablet & Mobile Right Action Area */}
+          <div className="flex lg:hidden items-center space-x-2 rtl:space-x-reverse shrink-0">
             <LanguageSwitcher />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -125,7 +124,7 @@ export function Navbar() {
 
         {/* Mobile & Tablet Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="xl:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-2 shadow-lg animate-fadeIn">
+          <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-2 shadow-lg animate-fadeIn">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
