@@ -16,7 +16,12 @@ interface DoctorCardProps {
 
 export function DoctorCard({ doctor }: DoctorCardProps) {
   const { language, t } = useLanguage();
-  const displayName = language === "ar" ? doctor.arabicName : doctor.name;
+  const isAr = language === "ar";
+
+  const displayName = isAr ? doctor.arabicName : doctor.name;
+  const displayTitle = isAr && doctor.arabicTitle ? doctor.arabicTitle : doctor.title;
+  const displayDept = isAr && doctor.arabicDepartmentName ? doctor.arabicDepartmentName : doctor.departmentName;
+  const displayBio = isAr && doctor.arabicBio ? doctor.arabicBio : doctor.bio;
 
   return (
     <Card className="group flex flex-col justify-between h-full">
@@ -29,17 +34,17 @@ export function DoctorCard({ doctor }: DoctorCardProps) {
             className="object-cover group-hover:scale-105 transition-transform duration-500"
           />
           <div className="absolute top-3 right-3 rtl:right-auto rtl:left-3">
-            <Badge variant="primary" className="bg-white/90 text-slate-800">
+            <Badge variant="primary" className="bg-white/90 text-slate-800 font-bold">
               {doctor.experienceYears}+ {t("yearsExp")}
             </Badge>
           </div>
         </div>
 
         <CardContent className="p-6 space-y-3">
-          <span className="text-xs font-semibold text-secondary uppercase">{doctor.departmentName}</span>
+          <span className="text-xs font-semibold text-secondary uppercase">{displayDept}</span>
           <h3 className="text-xl font-bold text-slate-900">{displayName}</h3>
-          <p className="text-xs text-primary-800 font-medium">{doctor.title}</p>
-          <p className="text-xs text-slate-600 line-clamp-2">{doctor.bio}</p>
+          <p className="text-xs text-primary-800 font-medium">{displayTitle}</p>
+          <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">{displayBio}</p>
         </CardContent>
       </div>
 
