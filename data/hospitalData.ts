@@ -332,3 +332,112 @@ export const servicesData: Service[] = [
     departmentId: "pediatrics",
   },
 ];
+
+export const facilitiesData: Facility[] = [
+  {
+    id: "fac-1",
+    title: "24/7 Fully Stocked Pharmacy",
+    description: "On-site pharmacy supplying prescribed medications, specialized therapeutics, and healthcare products at all hours.",
+    category: "care",
+    image: "https://images.unsplash.com/photo-1586015555751-63bb77f4322a?auto=format&fit=crop&w=800&q=80",
+    highlights: ["24/7 Direct Availability", "Pharmacist Consultation", "Insurance Covered Prescription Dispensing"],
+  },
+  {
+    id: "fac-2",
+    title: "Digital Radiology & Ultrasound Suite",
+    description: "State-of-the-art imaging center with low-dose digital radiography, Doppler ultrasound, and PACS digital integration.",
+    category: "technology",
+    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80",
+    highlights: ["Immediate Image Processing", "Color Doppler Diagnostics", "Low Radiation Exposure"],
+  },
+];
+
+export const insuranceProviders: InsuranceProvider[] = [
+  {
+    id: "ins-1",
+    name: "Tawuniya Insurance",
+    type: "Direct Billing",
+    logo: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=300&q=80",
+    description: "Direct approval and coverage for outpatient clinics, emergency, and diagnostic tests.",
+  },
+  {
+    id: "ins-2",
+    name: "Bupa Arabia",
+    type: "Direct Billing",
+    logo: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=300&q=80",
+    description: "Seamless coverage for Bupa membership tiers including priority care access.",
+  },
+  {
+    id: "ins-3",
+    name: "Medgulf Insurance",
+    type: "Direct Billing",
+    logo: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=300&q=80",
+    description: "Comprehensive direct claims processing across all specialized clinics.",
+  },
+];
+
+export const galleryItems: GalleryItem[] = [
+  {
+    id: "gal-1",
+    title: "Main Exterior Building Entrance",
+    category: "Exterior",
+    imageUrl: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=1200&q=80",
+    caption: "Faris Al-Jazeera Medical Complex situated conveniently on Najran Street, Dhahrat Laban.",
+  },
+];
+
+export const testimonialsData: Testimonial[] = [
+  {
+    id: "test-1",
+    patientName: "Mohammed Al-Otaibi",
+    role: "Local Resident",
+    comment: "Exceptional service at the emergency department. The staff was fast, extremely professional, and cared for my father immediately.",
+    rating: 5,
+    date: "May 14, 2026",
+    department: "Emergency Care",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+  },
+];
+
+export const blogPostsData: BlogPost[] = [
+  {
+    id: "post-1",
+    title: "Essential Tips for Managing Diabetes During Summer in Saudi Arabia",
+    slug: "managing-diabetes-summer-saudi-arabia",
+    excerpt: "Learn key medical advice from our Internal Medicine consultants on maintaining optimal blood sugar levels and hydration during hot weather.",
+    content: "Maintaining healthy blood glucose levels during intense summer heat in Riyadh requires careful monitoring...",
+    author: "Dr. Khaled Al-Ghamdi",
+    authorTitle: "Consultant Internal Medicine",
+    category: "Endocrinology & Health",
+    publishedAt: "July 15, 2026",
+    readTime: "4 min read",
+    coverImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
+    tags: ["Diabetes", "Health Tips", "Internal Medicine"],
+  },
+];
+
+export const jobOpeningsData: JobOpening[] = [
+  {
+    id: "job-1",
+    title: "Emergency Room Staff Nurse (RN)",
+    department: "Emergency Care",
+    type: "Full-Time",
+    location: "Riyadh (Dhahrat Laban)",
+    experienceRequired: "3+ Years in ER / ICU Setting",
+    description: "We are seeking dedicated Registered Nurses with SCFHS license and valid ACLS/BLS certification.",
+    requirements: [
+      "Valid Saudi Commission for Health Specialties (SCFHS) License",
+      "BSN in Nursing",
+      "Current BLS and ACLS Certifications",
+    ],
+  },
+];
+
+export const faqItemsData: FAQItem[] = [
+  {
+    id: "faq-1",
+    question: "Is Faris Al-Jazeera Emergency Department open 24/7?",
+    answer: "Yes, our Emergency and Urgent Care department is fully operational 24 hours a day, 7 days a week.",
+    category: "Emergency",
+  },
+];
