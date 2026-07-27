@@ -98,11 +98,11 @@ export function HeroSection() {
           <div className="grid grid-cols-2 gap-3 pt-6 border-t border-slate-800/80 max-w-lg mx-auto lg:mx-0">
             <div className="flex items-center space-x-2 rtl:space-x-reverse">
               <ShieldCheck className="w-4 h-4 text-emerald-400 flex-shrink-0"/>
-              <span className="text-[11px] sm:text-xs text-slate-200 font-medium">{t("licensedConsultants")}</span>
+              <span className="text-[14px] sm:text-base text-slate-200 font-medium">{t("licensedConsultants")}</span>
             </div>
             <div className="flex items-center space-x-2 rtl:space-x-reverse">
               <Clock className="w-4 h-4 text-teal-400 flex-shrink-0"/>
-              <span className="text-[11px] sm:text-xs text-slate-200 font-medium">{t("urgentCare247")}</span>
+              <span className="text-[14px] sm:text-base text-slate-200 font-medium">{t("urgentCare247")}</span>
             </div>
           </div>
 
