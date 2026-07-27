@@ -12,11 +12,11 @@ import { useLanguage } from "@/context/language-context";
 import { CheckCircle2, AlertCircle } from "lucide-react";
 
 const appointmentSchema = z.object({
-  fullName: z.string().min(3, "Required"),
-  phone: z.string().min(9, "Required"),
-  email: z.string().email("Invalid email"),
-  department: z.string().min(1, "Select department"),
-  preferredDate: z.string().min(1, "Select date"),
+  fullName: z.string().min(3, "Name must be at least 3 characters"),
+  phone: z.string().min(9, "Phone must be at least 9 digits"),
+  email: z.string().email("Invalid email address"),
+  department: z.string().min(1, "Please select a department"),
+  preferredDate: z.string().min(1, "Please select a date"),
 });
 
 type AppointmentFormValues = z.infer<typeof appointmentSchema>;
@@ -46,18 +46,16 @@ export default function AppointmentPage() {
         body: JSON.stringify(data),
       });
 
+      const resData = await response.json();
+
       if (!response.ok) {
-        throw new Error("Failed to send appointment request");
+        throw new Error(resData.error || "Failed to send appointment request");
       }
 
       setIsSubmitted(true);
       reset();
-    } catch (err) {
-      setSubmitError(
-        language === "ar"
-          ? "حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى أو الاتصال المباشر."
-          : "An error occurred while submitting your request. Please try again or call us directly."
-      );
+    } catch (err: any) {
+      setSubmitError(err?.message || "An error occurred while submitting your request.");
     }
   };
 
@@ -67,15 +65,18 @@ export default function AppointmentPage() {
         <h1 className="text-3xl font-bold font-heading mb-6">{t("bookAppointment")}</h1>
 
         {submitError && (
-          <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-center space-x-3 rtl:space-x-reverse text-red-700 text-xs">
-            <AlertCircle className="w-5 h-5 shrink-0" />
-            <span>{submitError}</span>
+          <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-start space-x-3 rtl:space-x-reverse text-red-700 text-xs">
+            <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
+            <div>
+              <p className="font-bold mb-0.5">Submission Error:</p>
+              <p>{submitError}</p>
+            </div>
           </div>
         )}
 
         {isSubmitted ? (
           <div className="text-center py-8 space-y-4">
-            <CheckCircle2 className="w-12 h-12 text-secondary mx-auto" />
+            <CheckCircle2 className="w-12 h-12 text-emerald-500 mx-auto" />
             <h2 className="text-xl font-bold">
               {language === "ar" ? "تم استلام طلب الحجز بنجاح!" : "Appointment Request Received!"}
             </h2>
@@ -98,7 +99,7 @@ export default function AppointmentPage() {
                 {...register("fullName")}
                 placeholder={language === "ar" ? "مثال: محمد العتيبي" : "e.g. John Doe"}
               />
-              {errors.fullName && <p className="text-xs text-red-500">{errors.fullName.message}</p>}
+              {errors.fullName && <p className="text-xs text-red-500 mt-1">{errors.fullName.message}</p>}
             </div>
 
             <div>
@@ -106,7 +107,7 @@ export default function AppointmentPage() {
                 {language === "ar" ? "رقم الهاتف *" : "Phone Number *"}
               </label>
               <Input {...register("phone")} placeholder="+966 5X XXX XXXX" />
-              {errors.phone && <p className="text-xs text-red-500">{errors.phone.message}</p>}
+              {errors.phone && <p className="text-xs text-red-500 mt-1">{errors.phone.message}</p>}
             </div>
 
             <div>
@@ -114,7 +115,7 @@ export default function AppointmentPage() {
                 {language === "ar" ? "البريد الإلكتروني *" : "Email Address *"}
               </label>
               <Input {...register("email")} placeholder="email@example.com" />
-              {errors.email && <p className="text-xs text-red-500">{errors.email.message}</p>}
+              {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email.message}</p>}
             </div>
 
             <div>
@@ -132,7 +133,7 @@ export default function AppointmentPage() {
                   </option>
                 ))}
               </select>
-              {errors.department && <p className="text-xs text-red-500">{errors.department.message}</p>}
+              {errors.department && <p className="text-xs text-red-500 mt-1">{errors.department.message}</p>}
             </div>
 
             <div>
@@ -140,7 +141,7 @@ export default function AppointmentPage() {
                 {language === "ar" ? "تاريخ الموعد *" : "Preferred Date *"}
               </label>
               <Input type="date" {...register("preferredDate")} />
-              {errors.preferredDate && <p className="text-xs text-red-500">{errors.preferredDate.message}</p>}
+              {errors.preferredDate && <p className="text-xs text-red-500 mt-1">{errors.preferredDate.message}</p>}
             </div>
 
             <Button type="submit" disabled={isSubmitting} className="w-full">
