@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
     if (!apiKey) {
       console.error("RESEND_API_KEY is missing from environment variables.");
       return NextResponse.json(
-        { error: "Server environment variable configuration error." },
+        { error: "RESEND_API_KEY is not configured in Vercel Environment Variables. Please redeploy your project." },
         { status: 500 }
       );
     }
@@ -21,14 +21,14 @@ export async function POST(request: NextRequest) {
 
     if (!fullName || !phone || !email || !department || !preferredDate) {
       return NextResponse.json(
-        { error: "All required fields must be provided." },
+        { error: "All required fields must be filled out." },
         { status: 400 }
       );
     }
 
     const { data, error } = await resend.emails.send({
-      from: "Faris Hospital Booking <onboarding@resend.dev>",
-      to: ["mfaisal1117fs@gmail.com"],
+      from: "onboarding@resend.dev",
+      to: ["mfaisal1117fs@gmail.com"], // Must match your Resend account email in free/onboarding mode
       subject: `New Appointment Request: ${fullName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; padding: 20px; border: 1px solid #e2e8f0; border-radius: 12px; color: #0f172a;">
@@ -66,15 +66,15 @@ export async function POST(request: NextRequest) {
     });
 
     if (error) {
-      console.error("Resend delivery error:", error);
-      return NextResponse.json({ error: error.message }, { status: 400 });
+      console.error("Resend API delivery error:", error);
+      return NextResponse.json({ error: error.message || "Failed to deliver email via Resend." }, { status: 400 });
     }
 
     return NextResponse.json({ success: true, data });
-  } catch (err) {
+  } catch (err: any) {
     console.error("Error in appointment API route:", err);
     return NextResponse.json(
-      { error: "Internal server error processing appointment." },
+      { error: err?.message || "Internal server error processing appointment." },
       { status: 500 }
     );
   }
