@@ -61,7 +61,7 @@ export function HeroSection() {
             <Link href="/appointment" className="w-full sm:w-auto">
               <Button 
                 size="lg" 
-                className="w-full sm:w-auto h-12 sm:h-16 px-6 sm:px-8 gap-2.5 sm:gap-3 bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-xl sm:text-base rounded-xl sm:rounded-2xl shadow-xl shadow-emerald-950/80 transition-all duration-200 hover:scale-[1.02] whitespace-nowrap"
+                className="w-full sm:w-auto h-12 sm:h-16 px-6 sm:px-8 gap-2.5 sm:gap-3 bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-base sm:text-base rounded-xl sm:rounded-2xl shadow-xl shadow-emerald-950/80 transition-all duration-200 hover:scale-[1.02] whitespace-nowrap"
               >
                 <Calendar className="w-5 h-5 shrink-0"/>
                 <span>{t("bookAppointment")}</span>
@@ -74,7 +74,7 @@ export function HeroSection() {
   <Button 
     size="lg" 
     variant="outline" 
-    className="w-full sm:w-auto h-12 sm:h-16 px-6 sm:px-8 gap-2.5 sm:gap-3 border-2 border-slate-600 bg-slate-900/90 text-slate-100 hover:bg-slate-800 font-extrabold text-sm sm:text-base rounded-xl sm:rounded-2xl backdrop-blur-md transition-all duration-200 hover:scale-[1.02] whitespace-nowrap"
+    className="w-full sm:w-auto h-12 sm:h-16 px-6 sm:px-8 gap-2.5 sm:gap-3 border-2 border-slate-600 bg-slate-900/90 text-slate-100 hover:bg-slate-800 font-extrabold text-base sm:text-base rounded-xl sm:rounded-2xl backdrop-blur-md transition-all duration-200 hover:scale-[1.02] whitespace-nowrap"
   >
     <Phone className="w-5 h-5 shrink-0 text-emerald-400"/>
     <span className="inline-flex items-center gap-1.5">
@@ -91,7 +91,7 @@ export function HeroSection() {
               <Button 
                 size="lg" 
                 variant="danger" 
-                className="w-full sm:w-auto h-12 sm:h-16 px-6 sm:px-8 gap-2.5 sm:gap-3 text-xl sm:text-base font-extrabold bg-red-600 hover:bg-red-700 text-white rounded-xl sm:rounded-2xl backdrop-blur-md shadow-xl shadow-red-950/80 transition-all duration-200 hover:scale-[1.02] whitespace-nowrap"
+                className="w-full sm:w-auto h-12 sm:h-16 px-6 sm:px-8 gap-2.5 sm:gap-3 text-base sm:text-base font-extrabold bg-red-600 hover:bg-red-700 text-white rounded-xl sm:rounded-2xl backdrop-blur-md shadow-xl shadow-red-950/80 transition-all duration-200 hover:scale-[1.02] whitespace-nowrap"
               >
                 <Siren className="w-5 h-5 shrink-0 animate-bounce"/>
                 <span>{t("urgentTrauma")}</span>
