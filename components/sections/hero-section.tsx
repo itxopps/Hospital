@@ -54,16 +54,16 @@ export function HeroSection() {
             {t("heroSubtitle")}
           </p>
 
-          {/* BIGGER Action Buttons Container */}
-          <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center lg:justify-start rtl:lg:justify-start gap-4 w-full pt-4">
+          {/* BUTTON CONTAINER: Stacks on Mobile (flex-col), Single Line on Web (sm:flex-row sm:flex-nowrap) */}
+          <div className="flex flex-col sm:flex-row sm:flex-nowrap items-stretch sm:items-center justify-center lg:justify-start rtl:lg:justify-start gap-3 sm:gap-4 w-full pt-4">
             
             {/* Book Appointment Button */}
             <Link href="/appointment" className="w-full sm:w-auto">
               <Button 
                 size="lg" 
-                className="w-full sm:w-auto h-14 sm:h-16 px-8 gap-3 bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-base sm:text-lg rounded-2xl shadow-2xl shadow-emerald-950/80 transition-all duration-200 hover:scale-[1.02]"
+                className="w-full sm:w-auto h-12 sm:h-16 px-6 sm:px-8 gap-2.5 sm:gap-3 bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-xl sm:text-base rounded-xl sm:rounded-2xl shadow-xl shadow-emerald-950/80 transition-all duration-200 hover:scale-[1.02] whitespace-nowrap"
               >
-                <Calendar className="w-5 h-5 sm:w-6 sm:h-6 shrink-0"/>
+                <Calendar className="w-5 h-5 shrink-0"/>
                 <span>{t("bookAppointment")}</span>
               </Button>
             </Link>
@@ -73,9 +73,9 @@ export function HeroSection() {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="w-full sm:w-auto h-14 sm:h-16 px-8 gap-3 border-2 border-slate-600 bg-slate-900/90 text-slate-100 hover:bg-slate-800 font-extrabold text-base sm:text-lg rounded-2xl backdrop-blur-md transition-all duration-200 hover:scale-[1.02]"
+                className="w-full sm:w-auto h-12 sm:h-16 px-6 sm:px-8 gap-2.5 sm:gap-3 border-2 border-slate-600 bg-slate-900/90 text-slate-100 hover:bg-slate-800 font-extrabold text-xl sm:text-base rounded-xl sm:rounded-2xl backdrop-blur-md transition-all duration-200 hover:scale-[1.02] whitespace-nowrap"
               >
-                <Phone className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 text-emerald-400"/>
+                <Phone className="w-5 h-5 shrink-0 text-emerald-400"/>
                 <span>{t("callUs")} ({hospitalDetails.phone})</span>
               </Button>
             </a>
@@ -85,9 +85,9 @@ export function HeroSection() {
               <Button 
                 size="lg" 
                 variant="danger" 
-                className="w-full sm:w-auto h-14 sm:h-16 px-8 gap-3 text-base sm:text-lg font-extrabold bg-red-600 hover:bg-red-700 text-white rounded-2xl backdrop-blur-md shadow-2xl shadow-red-950/80 transition-all duration-200 hover:scale-[1.02]"
+                className="w-full sm:w-auto h-12 sm:h-16 px-6 sm:px-8 gap-2.5 sm:gap-3 text-xl sm:text-base font-extrabold bg-red-600 hover:bg-red-700 text-white rounded-xl sm:rounded-2xl backdrop-blur-md shadow-xl shadow-red-950/80 transition-all duration-200 hover:scale-[1.02] whitespace-nowrap"
               >
-                <Siren className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 animate-bounce"/>
+                <Siren className="w-5 h-5 shrink-0 animate-bounce"/>
                 <span>{t("urgentTrauma")}</span>
               </Button>
             </a>
