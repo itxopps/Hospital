@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
 
     const { data, error } = await resend.emails.send({
       from: "Faris Hospital Booking <onboarding@resend.dev>",
-      to: ["oppstech1117@gmail.com"],
+      to: ["mfaisal1117fs@gmail.com"],
       subject: `New Appointment Request: ${fullName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; padding: 20px; border: 1px solid #e2e8f0; border-radius: 12px; color: #0f172a;">
