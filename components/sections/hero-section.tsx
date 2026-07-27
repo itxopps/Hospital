@@ -69,16 +69,22 @@ export function HeroSection() {
             </Link>
 
             {/* Call Us Button */}
-            <a href={`tel:${hospitalDetails.phone}`} className="w-full sm:w-auto">
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="w-full sm:w-auto h-12 sm:h-16 px-6 sm:px-8 gap-2.5 sm:gap-3 border-2 border-slate-600 bg-slate-900/90 text-slate-100 hover:bg-slate-800 font-extrabold text-xl sm:text-base rounded-xl sm:rounded-2xl backdrop-blur-md transition-all duration-200 hover:scale-[1.02] whitespace-nowrap"
-              >
-                <Phone className="w-5 h-5 shrink-0 text-emerald-400"/>
-                <span>{t("callUs")} ({hospitalDetails.phone})</span>
-              </Button>
-            </a>
+         
+<a href={`tel:${hospitalDetails.phone}`} className="w-full sm:w-auto">
+  <Button 
+    size="lg" 
+    variant="outline" 
+    className="w-full sm:w-auto h-12 sm:h-16 px-6 sm:px-8 gap-2.5 sm:gap-3 border-2 border-slate-600 bg-slate-900/90 text-slate-100 hover:bg-slate-800 font-extrabold text-sm sm:text-base rounded-xl sm:rounded-2xl backdrop-blur-md transition-all duration-200 hover:scale-[1.02] whitespace-nowrap"
+  >
+    <Phone className="w-5 h-5 shrink-0 text-emerald-400"/>
+    <span className="inline-flex items-center gap-1.5">
+      <span>{t("callUs")}</span>
+      <span dir="ltr" className="inline-block font-sans">
+        ({hospitalDetails.phone})
+      </span>
+    </span>
+  </Button>
+</a>
 
             {/* 24/7 Emergency Button */}
             <a href={`tel:${hospitalDetails.emergencyPhone}`} className="w-full sm:w-auto">
