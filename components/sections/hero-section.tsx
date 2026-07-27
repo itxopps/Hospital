@@ -21,7 +21,7 @@ export function HeroSection() {
           alt="Hospital Facility"
           fill
           priority
-          className="object-cover object-center opacity-15 scale-105"
+          className="object-cover object-center opacity-35 scale-105"
         />
         {/* Gradient overlays to keep text sharp and easy to read */}
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/95 to-slate-900/70 rtl:bg-gradient-to-l" />
