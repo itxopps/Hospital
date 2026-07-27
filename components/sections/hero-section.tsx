@@ -12,7 +12,7 @@ export function HeroSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative w-full bg-slate-900 text-white overflow-hidden pt-12 pb-20 lg:pt-24 lg:pb-36">
+    <section className="relative w-full bg-slate-700 text-white overflow-hidden pt-12 pb-20 lg:pt-24 lg:pb-36">
       
       {/* Background Image with Minimal Opacity */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
