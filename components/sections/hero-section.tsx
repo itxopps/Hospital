@@ -14,18 +14,17 @@ export function HeroSection() {
   return (
     <section className="relative w-full bg-slate-950 text-white overflow-hidden pt-12 pb-20 lg:pt-24 lg:pb-36">
       
-      {/* Background Image with Vibrancy & Contrast Boosting */}
+      {/* Background Image with High Contrast & Vibrancy */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=1600&q=80"
           alt="Hospital Facility"
           fill
           priority
-          /* CSS Filters boost contrast, saturation, and brightness */
           className="object-cover object-center contrast-125 saturate-150 brightness-110 opacity-80 scale-105"
         />
         
-        {/* Shadow Overlay ONLY behind the text area (Left in LTR, Right in RTL) */}
+        {/* Dark Gradient Overlay for Text Readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent rtl:bg-gradient-to-l" />
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-transparent to-slate-950/90" />
       </div>
@@ -55,28 +54,44 @@ export function HeroSection() {
             {t("heroSubtitle")}
           </p>
 
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start rtl:lg:justify-start gap-3 sm:gap-4 w-full pt-2">
+          {/* BIGGER Action Buttons Container */}
+          <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center lg:justify-start rtl:lg:justify-start gap-4 w-full pt-4">
+            
+            {/* Book Appointment Button */}
             <Link href="/appointment" className="w-full sm:w-auto">
-              <Button size="lg" className="w-full sm:w-auto gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm shadow-xl shadow-emerald-950/50">
-                <Calendar className="w-4 h-4"/>
+              <Button 
+                size="lg" 
+                className="w-full sm:w-auto h-14 sm:h-16 px-8 gap-3 bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-base sm:text-lg rounded-2xl shadow-2xl shadow-emerald-950/80 transition-all duration-200 hover:scale-[1.02]"
+              >
+                <Calendar className="w-5 h-5 sm:w-6 sm:h-6 shrink-0"/>
                 <span>{t("bookAppointment")}</span>
               </Button>
             </Link>
 
+            {/* Call Us Button */}
             <a href={`tel:${hospitalDetails.phone}`} className="w-full sm:w-auto">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto gap-2 border-slate-600 bg-slate-900/80 text-slate-200 hover:bg-slate-800 backdrop-blur-md text-sm">
-                <Phone className="w-4 h-4"/>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="w-full sm:w-auto h-14 sm:h-16 px-8 gap-3 border-2 border-slate-600 bg-slate-900/90 text-slate-100 hover:bg-slate-800 font-extrabold text-base sm:text-lg rounded-2xl backdrop-blur-md transition-all duration-200 hover:scale-[1.02]"
+              >
+                <Phone className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 text-emerald-400"/>
                 <span>{t("callUs")} ({hospitalDetails.phone})</span>
               </Button>
             </a>
 
+            {/* 24/7 Emergency Button */}
             <a href={`tel:${hospitalDetails.emergencyPhone}`} className="w-full sm:w-auto">
-              <Button size="lg" variant="danger" className="w-full sm:w-auto gap-2 text-sm bg-red-600 hover:bg-red-700 text-white font-bold backdrop-blur-md">
-                <Siren className="w-4 h-4 animate-bounce"/>
+              <Button 
+                size="lg" 
+                variant="danger" 
+                className="w-full sm:w-auto h-14 sm:h-16 px-8 gap-3 text-base sm:text-lg font-extrabold bg-red-600 hover:bg-red-700 text-white rounded-2xl backdrop-blur-md shadow-2xl shadow-red-950/80 transition-all duration-200 hover:scale-[1.02]"
+              >
+                <Siren className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 animate-bounce"/>
                 <span>{t("urgentTrauma")}</span>
               </Button>
             </a>
+
           </div>
 
           {/* Trust Badges */}
